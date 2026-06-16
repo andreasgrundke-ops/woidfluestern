@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WOIDflüstern · Mobil-Ansicht</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0c4da2">
+<style>
+  :root{
+    --accent:#0c4da2; --accent-cyan:#26bdef; --bg:#f4f7fc; --text:#111; --text-2:#555;
+    --border:#d0daea; --ff-ui:'Manrope','Segoe UI',Arial,sans-serif; --ff-disp:'Syne',var(--ff-ui);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--ff-ui);background:#eaf0f8;color:var(--text);min-height:100vh;
+       display:flex;flex-direction:column;align-items:center;padding:24px 16px 40px}
+  .head{text-align:center;max-width:520px;margin-bottom:22px}
+  .head .kick{display:inline-block;background:#e8f0fb;color:var(--accent);font-weight:700;font-size:.68rem;
+     letter-spacing:.16em;text-transform:uppercase;padding:6px 13px;border-radius:30px}
+  .head h1{font-family:var(--ff-disp);font-weight:800;font-size:1.5rem;margin:14px 0 8px}
+  .head p{color:var(--text-2);font-size:.95rem}
+
+  /* Handy-Rahmen */
+  .phone{width:375px;max-width:100%;height:760px;background:#0f1117;border-radius:46px;
+     padding:13px;box-shadow:0 30px 70px rgba(12,77,162,.28),0 0 0 2px #c3d2e8;position:relative}
+  .phone::before{content:"";position:absolute;top:24px;left:50%;transform:translateX(-50%);
+     width:120px;height:26px;background:#0f1117;border-radius:0 0 16px 16px;z-index:3}
+  .screen{width:100%;height:100%;border-radius:34px;overflow:hidden;background:#fff;position:relative}
+  iframe{width:100%;height:100%;border:0;display:block}
+
+  .actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  .btn{padding:12px 22px;border-radius:10px;font-weight:700;font-size:.92rem;border:1px solid var(--border);
+     background:#fff;color:var(--accent);transition:transform .15s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(12,77,162,.16)}
+  .btn.pri{background:var(--accent);color:#fff;border-color:var(--accent)}
+  a{text-decoration:none}
+  .hint{margin-top:16px;color:#7a8aa0;font-size:.82rem;text-align:center;max-width:420px}
+</style>
+</head>
+<body>
+  <div class="head">
+    <span class="kick">Baustein 2 · Mobil-Ansicht</span>
+    <h1>So sieht die Seite am Handy aus</h1>
+    <p>Die meisten deiner Besucher kommen über das Smartphone. Tipp: Du kannst im Rahmen scrollen.</p>
+  </div>
+
+  <div class="phone">
+    <div class="screen">
+      <iframe src="../index.html" title="WOIDflüstern Website – Mobilansicht" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a class="btn pri" href="../index.html">Seite in Vollbild öffnen</a>
+    <a class="btn" href="../hub/index.html">← Zurück zur Übersicht</a>
+  </div>
+  <p class="hint">Auf einem echten Smartphone füllt die Seite den ganzen Bildschirm – dieser Rahmen dient nur der Vorschau am PC.</p>
+</body>
+</html>

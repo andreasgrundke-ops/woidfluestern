@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WOIDflüstern · Flyer A4 (gefaltet)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+  :root{
+    --wald:#1c352c; --wald-2:#234234; --moos:#5a7d63; --petrol:#2b6e72; --petrol-hell:#4f9598;
+    --licht:#d8b06a; --nebel:#eef0ea; --papier:#f6f7f3; --text:#20302a; --soft:#56635b; --linie:#d6dbd2;
+    --ff-disp:'Fraunces',Georgia,serif; --ff-body:'Mulish',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--ff-body);background:#dfe3da;color:var(--text);line-height:1.55;padding:24px 0}
+
+  /* Bildschirm-Hinweis (wird beim Druck ausgeblendet) */
+  .screenbar{max-width:1120px;margin:0 auto 22px;padding:0 18px;display:flex;gap:14px;flex-wrap:wrap;
+     align-items:center;justify-content:space-between}
+  .screenbar .t{font-family:var(--ff-disp);font-size:1.05rem;color:var(--wald)}
+  .screenbar .t small{display:block;font-family:var(--ff-body);font-size:.82rem;color:var(--soft)}
+  .screenbar a{font-size:.85rem;font-weight:700;text-decoration:none;padding:10px 18px;border-radius:8px;
+     background:var(--wald);color:#fff}
+  .screenbar a.ghost{background:#fff;color:var(--wald);border:1px solid var(--linie)}
+
+  /* A4 quer = 297 x 210 mm, 3 Spalten Wickelfalz */
+  .sheet{width:297mm;height:210mm;margin:0 auto 22px;background:#fff;display:flex;
+     box-shadow:0 14px 40px rgba(28,53,44,.22)}
+  .panel{width:99mm;height:210mm;padding:14mm 11mm;position:relative;overflow:hidden;
+     border-right:1px dashed #c8cfc2}
+  .panel:last-child{border-right:0}
+
+  .eyebrow{font-size:8.5pt;letter-spacing:.26em;text-transform:uppercase;color:var(--petrol);font-weight:700}
+  h1,h2,h3{font-family:var(--ff-disp);font-weight:500;line-height:1.12}
+
+  /* ---- AUSSENSEITE ---- */
+  /* Titelseite (rechtes Panel außen) */
+  .cover{background:var(--wald);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+  .cover .brand{font-family:var(--ff-disp);font-size:20pt}
+  .cover .brand b{font-weight:600}
+  .cover .brand span{display:block;font-family:var(--ff-body);font-size:7.5pt;letter-spacing:.28em;
+     text-transform:uppercase;opacity:.85;margin-top:4px}
+  .cover .claim{font-family:var(--ff-disp);font-size:20pt;font-weight:400;line-height:1.25;text-wrap:balance}
+  .cover .leaf{width:46px;height:46px;color:var(--licht);margin-bottom:14px}
+  .cover .foot{font-size:8.5pt;color:rgba(255,255,255,.7)}
+
+  /* Rückseite (linkes Panel außen) = Kontakt */
+  .back{background:var(--papier);display:flex;flex-direction:column;justify-content:space-between}
+  .back h2{font-size:15pt;color:var(--wald);margin-bottom:8mm}
+  .kontaktblock p{font-size:9.5pt;color:var(--soft);margin-bottom:5mm}
+  .kontaktblock .lbl{font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--petrol);
+     font-weight:700;display:block;margin-bottom:1mm}
+  .kontaktblock .big{font-family:var(--ff-disp);font-size:13pt;color:var(--wald)}
+  .care{background:#fff;border:1px solid var(--linie);border-radius:8px;padding:5mm;font-size:7.6pt;
+     color:var(--soft);line-height:1.5}
+  .care b{color:var(--wald)}
+
+  /* Mittleres Panel außen = Einladung */
+  .invite{background:var(--nebel);display:flex;flex-direction:column;justify-content:center}
+  .invite h2{font-size:15pt;color:var(--wald);margin:4mm 0 5mm}
+  .invite p{font-size:9.5pt;color:var(--soft);margin-bottom:4mm}
+  .invite .sig{font-family:var(--ff-disp);font-style:italic;font-size:12pt;color:var(--petrol);margin-top:4mm}
+
+  /* ---- INNENSEITE ---- */
+  .inner{background:var(--papier)}
+  .inner h2{font-size:14pt;color:var(--wald);margin-bottom:6mm}
+  .offer{margin-bottom:7mm}
+  .offer .leaf{width:30px;height:30px;color:var(--petrol);margin-bottom:2mm}
+  .offer h3{font-size:11.5pt;color:var(--wald);margin-bottom:1.5mm}
+  .offer p{font-size:8.8pt;color:var(--soft)}
+  .steps{counter-reset:s}
+  .step{display:flex;gap:4mm;margin-bottom:4mm;align-items:flex-start}
+  .step .n{font-family:var(--ff-disp);font-size:15pt;color:var(--licht);line-height:1;flex:0 0 auto;width:9mm}
+  .step h3{font-size:10pt;color:var(--wald);margin-bottom:.5mm}
+  .step p{font-size:8.5pt;color:var(--soft)}
+  .inner .lead{font-family:var(--ff-disp);font-size:12.5pt;color:var(--wald);line-height:1.3;margin-bottom:6mm;text-wrap:balance}
+  .region-line{margin-top:5mm;font-size:8.5pt;color:var(--soft);border-top:1px solid var(--linie);padding-top:4mm}
+  .region-line b{color:var(--petrol)}
+
+  @media print{
+    body{background:#fff;padding:0}
+    .screenbar{display:none}
+    .sheet{box-shadow:none;margin:0;page-break-after:always}
+    .panel{border-right:0}
+    @page{size:A4 landscape;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="screenbar">
+  <div class="t">Flyer · A4 quer, 3-fach gefaltet (Wickelfalz)
+    <small>Seite 1 = Außen · Seite 2 = Innen · zum Drucken: Strg/Cmd + P → beidseitig, A4 quer</small>
+  </div>
+  <div>
+    <a href="javascript:window.print()">Drucken / als PDF speichern</a>
+    <a class="ghost" href="../hub/index.html">← Übersicht</a>
+  </div>
+</div>
+
+<!-- ============ AUSSENSEITE ============ -->
+<div class="sheet">
+  <!-- Linkes Panel = Rückseite (Kontakt) -->
+  <div class="panel back">
+    <div>
+      <span class="eyebrow">Kontakt</span>
+      <h2>Du musst das nicht allein tragen.</h2>
+      <div class="kontaktblock">
+        <p><span class="lbl">Telefon</span><span class="big">0151 58163538</span></p>
+        <p><span class="lbl">E-Mail</span>alex@woidfluestern.de</p>
+        <p><span class="lbl">Online</span>woidfluestern.de · @woidfluestern_coaching</p>
+        <p><span class="lbl">Unterwegs in</span>den Wäldern rund um Diepersdorf, Leinburg &amp; das Nürnberger Land</p>
+      </div>
+    </div>
+    <div class="care">
+      <b>Wichtiger Hinweis:</b> Trauerbegleitung ersetzt keine ärztliche oder psychotherapeutische Behandlung. In einer akuten Krise hilft die Telefonseelsorge rund um die Uhr kostenfrei: <b>0800 111 0 111</b>.
+    </div>
+  </div>
+
+  <!-- Mittleres Panel = Einladung -->
+  <div class="panel invite">
+    <span class="eyebrow">Eine Einladung</span>
+    <h2>Der Wald wartet nicht mit Antworten — sondern mit Raum.</h2>
+    <p>Trauer braucht keinen Termin und keine fertigen Worte. Sie braucht Zeit, einen Weg und jemanden, der ihn an deiner Seite geht.</p>
+    <p>Wenn du magst, lass uns sprechen. Ganz unverbindlich.</p>
+    <div class="sig">— Alexandra</div>
+  </div>
+
+  <!-- Rechtes Panel = Titelseite -->
+  <div class="panel cover">
+    <div>
+      <div class="brand"><b>WOID</b>flüstern<span>Trauerbegleitung im Wald</span></div>
+    </div>
+    <div>
+      <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 16-9 0 11-4 16-9 16Z"/><path d="M4 20c2-6 6-9 9-10"/></svg>
+      <div class="claim">Wenn Worte schwer werden, geht der Wald ein Stück mit.</div>
+    </div>
+    <div class="foot">Achtsame Trauerbegleitung · Mittelfranken</div>
+  </div>
+</div>
+
+<!-- ============ INNENSEITE ============ -->
+<div class="sheet">
+  <!-- Innen links -->
+  <div class="panel inner">
+    <span class="eyebrow">Begleitung</span>
+    <h2>Drei Wege, gemeinsam zu gehen</h2>
+    <div class="offer">
+      <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 20A7 7 0 0 1 4 13c0-5 4-9 16-9 0 11-4 16-9 16Z"/><path d="M4 20c2-6 6-9 9-10"/></svg>
+      <h3>Trauerspaziergänge</h3>
+      <p>Eins-zu-eins unterwegs im Wald. Bewegung bringt ins Fließen, was innen feststeckt. Du gibst das Tempo vor.</p>
+    </div>
+    <div class="offer">
+      <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3.4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+      <h3>Begleitung über Zeit</h3>
+      <p>Trauer kennt keinen Fahrplan. Ich bin verlässlich an deiner Seite — auch über die stillen Monate.</p>
+    </div>
+    <div class="offer">
+      <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10Z"/></svg>
+      <h3>Abschiede &amp; Rituale</h3>
+      <p>Ein Ort, ein Baum, ein bewusster Moment. Gemeinsam gestalten wir ein Ritual — würdevoll und ganz deins.</p>
+    </div>
+  </div>
+
+  <!-- Innen mitte -->
+  <div class="panel inner">
+    <span class="eyebrow">Ablauf</span>
+    <h2>Wie eine Begleitung beginnt</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><h3>Erstes Gespräch</h3><p>Ein kostenloses Kennenlernen am Telefon. Wir spüren, ob es zwischen uns passt.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Der erste Weg</h3><p>Wir treffen uns in der Natur und gehen los. Kein Programm, kein Müssen.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>In deinem Tempo</h3><p>Ein einzelner Spaziergang oder eine längere Begleitung — du entscheidest.</p></div></div>
+    </div>
+    <div class="region-line">
+      <b>In deiner Nähe:</b> Nürnberg · Lauf · Erlangen · Röthenbach · Schwaig · Rückersdorf · Schnaittach · Leinburg · Altdorf — im Umkreis von rund 50&nbsp;km.
+    </div>
+  </div>
+
+  <!-- Innen rechts -->
+  <div class="panel inner">
+    <span class="eyebrow">Über mich</span>
+    <p class="lead">An deiner Seite — draußen, wo das Leben weitergeht.</p>
+    <p style="font-size:9pt;color:var(--soft);margin-bottom:4mm">Ich habe selbst erfahren, wie es ist, wenn der Boden wegbricht und gut gemeinte Worte ins Leere laufen. Geholfen hat mir nicht der nächste Ratschlag — sondern Zeit, Natur und ein Gegenüber, das es aushält.</p>
+    <p style="font-size:9pt;color:var(--soft);margin-bottom:4mm">Genau das möchte ich weitergeben. Ich begleite dich achtsam und ohne Eile — als Mensch, nicht als Therapeutin. Was du mir anvertraust, bleibt zwischen uns und den Bäumen.</p>
+    <p style="font-family:var(--ff-disp);font-style:italic;font-size:11pt;color:var(--petrol)">„Loslassen heißt nicht vergessen. Es heißt, das Schwere anders zu tragen.“</p>
+  </div>
+</div>
+
+</body>
+</html>

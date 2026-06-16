@@ -1,0 +1,12 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.claude/
+*.log
+_backup_*/
+_DEPLOY/
+# SSH Deploy Keys – NIEMALS committen
+deploy_key
+deploy_key.pub
+*.pem

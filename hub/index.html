@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WOIDflüstern · Entwurfspaket · Grundke IT-Service</title>
+<meta name="description" content="Präsentations-Hub: Website-, Mobil-, Flyer- und Visitenkarten-Entwurf für WOIDflüstern. Erstellt von Grundke IT-Service.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0c4da2">
+
+<!-- Open Graph: hübsche WhatsApp-Vorschau -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dein Website-Entwurf · WOIDflüstern">
+<meta property="og:description" content="Schau dir den Entwurf für Website, Flyer & Visitenkarte an – am Handy oder am PC.">
+<meta property="og:locale" content="de_DE">
+
+<style>
+  /* ===== Grundke IT-Service · CI 2026.01 · Web-Profil (Light) ===== */
+  :root{
+    --accent:#0c4da2; --accent-cyan:#26bdef;
+    --text:#111111; --text-2:#555555; --muted:#888888;
+    --border:#d0daea; --bg:#f4f7fc; --card:#ffffff; --accent-bg:#e8f0fb;
+    --success:#1a7a5e;
+    --ff-ui:'Manrope','Segoe UI',Arial,sans-serif;
+    --ff-disp:'Syne',var(--ff-ui);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:15px}
+  body{font-family:var(--ff-ui);background:var(--bg);color:var(--text);line-height:1.6;
+       -webkit-font-smoothing:antialiased;min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* Kopf */
+  header.top{background:linear-gradient(135deg,var(--accent) 0%,#0a3f86 100%);color:#fff;
+     padding:30px 0 26px;position:relative;overflow:hidden}
+  header.top::after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;
+     border-radius:50%;background:radial-gradient(circle,rgba(38,189,239,.45),transparent 70%)}
+  .brandrow{display:flex;align-items:center;gap:14px;position:relative;z-index:2}
+  .logo{width:46px;height:46px;border-radius:11px;background:#fff;display:flex;align-items:center;
+     justify-content:center;font-family:var(--ff-disp);font-weight:800;color:var(--accent);font-size:1.35rem;flex:0 0 auto}
+  .brandrow .co{font-family:var(--ff-disp);font-weight:700;font-size:1.18rem;letter-spacing:.01em}
+  .brandrow .co small{display:block;font-family:var(--ff-ui);font-weight:500;font-size:.72rem;
+     opacity:.85;letter-spacing:.16em;text-transform:uppercase;margin-top:2px}
+
+  .hero{padding:46px 0 8px}
+  .hero .kicker{display:inline-block;background:var(--accent-bg);color:var(--accent);font-weight:700;
+     font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:30px}
+  .hero h1{font-family:var(--ff-disp);font-weight:800;font-size:clamp(1.8rem,4.4vw,2.9rem);
+     line-height:1.1;margin:18px 0 14px;letter-spacing:-.01em}
+  .hero h1 .green{color:var(--success)}
+  .hero p.lead{color:var(--text-2);font-size:1.08rem;max-width:62ch}
+
+  .note{background:var(--accent-bg);border-left:4px solid var(--accent-cyan);border-radius:10px;
+     padding:16px 20px;margin:26px 0 4px;color:var(--text-2);font-size:.95rem}
+  .note b{color:var(--accent)}
+
+  /* Kacheln */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:36px 0 10px}
+  .tile{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px 24px;
+     display:flex;flex-direction:column;gap:8px;transition:transform .2s,box-shadow .25s,border-color .2s;position:relative}
+  .tile:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(12,77,162,.13);border-color:var(--accent-cyan)}
+  .tile .ic{width:46px;height:46px;border-radius:11px;background:var(--accent-bg);color:var(--accent);
+     display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+  .tile h3{font-family:var(--ff-disp);font-weight:700;font-size:1.22rem;display:flex;align-items:center;gap:9px}
+  .tile p{color:var(--text-2);font-size:.94rem}
+  .tile .go{margin-top:10px;color:var(--accent);font-weight:700;font-size:.92rem;display:inline-flex;align-items:center;gap:7px}
+  .tile .go svg{transition:transform .2s}
+  .tile:hover .go svg{transform:translateX(4px)}
+  .tile .badge{position:absolute;top:18px;right:20px;font-size:.66rem;font-weight:700;letter-spacing:.1em;
+     text-transform:uppercase;color:var(--muted)}
+
+  /* Kontakt / Footer */
+  .maker{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px 28px;
+     margin:30px 0;display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center}
+  .maker .who{font-family:var(--ff-disp);font-weight:700;font-size:1.12rem}
+  .maker .who small{display:block;font-family:var(--ff-ui);font-weight:500;color:var(--text-2);font-size:.88rem;margin-top:2px}
+  .maker .contact{display:flex;flex-wrap:wrap;gap:10px}
+  .maker .contact a{background:var(--accent-bg);color:var(--accent);font-weight:600;font-size:.9rem;
+     padding:10px 16px;border-radius:9px;transition:background .2s}
+  .maker .contact a:hover{background:#dbe8fa}
+
+  footer.foot{text-align:center;color:var(--muted);font-size:.8rem;padding:18px 0 40px}
+  footer.foot b{color:var(--text-2)}
+
+  @media(max-width:720px){
+    .grid{grid-template-columns:1fr}
+    .maker{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brandrow">
+      <div class="logo">G</div>
+      <div class="co">Grundke IT-Service<small>Webdesign &amp; IT aus einer Hand</small></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="kicker">Entwurfspaket zur Ansicht</span>
+    <h1>Dein neuer Auftritt für <span class="green">WOIDflüstern</span></h1>
+    <p class="lead">Hallo Alexandra, hier ist mein Entwurf für deinen neuen Webauftritt – als Ersatz für die bestehende Seite. Klick dich einfach durch die vier Bausteine. Alles funktioniert am <b>Handy</b> genauso wie am <b>PC</b>.</p>
+    <div class="note">
+      <b>Das ist ein Entwurf (Mockup).</b> Texte, Fotos und Kontaktdaten lassen sich noch frei anpassen. Schau in Ruhe rein und sag mir, was dir gefällt und was wir ändern.
+    </div>
+  </section>
+
+  <section class="grid">
+    <!-- Website -->
+    <a class="tile" href="../index.html">
+      <span class="badge">Baustein 1</span>
+      <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 8h20M8 21h8M12 17v4"/></svg></span>
+      <h3>Website</h3>
+      <p>Die komplette Seite für den großen Bildschirm – Aufbau, Texte, Bildwelt und Farbkonzept.</p>
+      <span class="go">Website ansehen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <!-- Mobil -->
+    <a class="tile" href="../mobile/index.html">
+      <span class="badge">Baustein 2</span>
+      <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
+      <h3>Mobil-Ansicht</h3>
+      <p>So sieht die Seite auf dem Smartphone aus – die Ansicht, die deine Besucher am häufigsten sehen.</p>
+      <span class="go">Am Handy ansehen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <!-- Flyer -->
+    <a class="tile" href="../flyer/index.html">
+      <span class="badge">Baustein 3</span>
+      <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 3h16v18l-8-4-8 4z"/><path d="M9 8h6M9 12h6"/></svg></span>
+      <h3>Flyer (A4, gefaltet)</h3>
+      <p>Ein Falt-Flyer zum Ausdrucken und Auslegen – z. B. bei Bestattern, Hausärzten oder Apotheken.</p>
+      <span class="go">Flyer ansehen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+
+    <!-- Visitenkarte -->
+    <a class="tile" href="../visitenkarte/index.html">
+      <span class="badge">Baustein 4</span>
+      <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 10h6M6 14h4M16 9h2"/></svg></span>
+      <h3>Visitenkarte</h3>
+      <p>Vorder- und Rückseite im passenden Design – zum Mitgeben nach dem ersten Gespräch.</p>
+      <span class="go">Visitenkarte ansehen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </section>
+
+  <section class="maker">
+    <div class="who">Andreas Grundke
+      <small>Grundke IT-Service · dein Ansprechpartner für Web &amp; IT</small>
+    </div>
+    <div class="contact">
+      <a href="tel:+4917825844380">0178 2584438</a>
+      <a href="mailto:info@grundke-it.de">info@grundke-it.de</a>
+      <a href="https://grundke-it.de" target="_blank" rel="noopener">grundke-it.de</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  CI 2026.01 · <b>Grundke IT-Service</b> · www.grundke-it.de — Entwurf für WOIDflüstern, Weitergabe nur nach Absprache
+</footer>
+
+</body>
+</html>

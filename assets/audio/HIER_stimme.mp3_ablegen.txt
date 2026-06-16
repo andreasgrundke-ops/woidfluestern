@@ -1,0 +1,8 @@
+Sprachprobe von Alex hier als "stimme.mp3" ablegen.
+
+- Dateiname exakt: stimme.mp3
+- Format: MP3 (z. B. WhatsApp-Sprachnachricht vorher zu MP3 konvertieren)
+- Empfohlene Länge: ca. 30-60 Sekunden
+- Der Stimm-Player auf der Seite erkennt die Datei automatisch und spielt sie ab.
+
+Diese Hinweisdatei kann danach geloescht werden.

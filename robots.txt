@@ -1,0 +1,6 @@
+# robots.txt · WOIDflüstern
+# Alles erlaubt – auch KI-Crawler (GEO / Sichtbarkeit in KI-Suche)
+User-agent: *
+Allow: /
+
+Sitemap: https://www.woidfluestern.de/sitemap.xml
