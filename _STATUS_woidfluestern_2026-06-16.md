@@ -12,10 +12,10 @@
 - Musterprojekt-Paket: Landing-Hub (Grundke CI) + Mobile-Frame + A4-Flyer (Wickelfalz) + Visitenkarte
 - Verifiziert: alle Anker, Section-Balance 14/14, JSON-LD valid, HTML-Struktur ok, alle Assets da
 - Git-Repo committet (26 Dateien) + ZIP unter _DEPLOY/woidfluestern_v1.zip
+- ✅ DEPLOY LIVE (2026-06-16): Push via gh → Repo andreasgrundke-ops/woidfluestern (public), GitHub Pages aktiv (Branch main / root), Hub mit HTTP 200 verifiziert. Git-Identität lokal gesetzt (GitHub-noreply, keine private Mail in History), `.claude/` ignoriert. Secret-Gate vor Push bestanden (keine Deploy-Keys getrackt).
 
-## Offen (vor Live-Gang)
-- DEPLOY: Andy pusht selbst via gh (Account andreasgrundke-ops, Repo woidfluestern public). Befehle in DEPLOY.md
-- WhatsApp-Link: https://andreasgrundke-ops.github.io/woidfluestern/hub/
+## Offen (vor finalem Go-Live unter eigener Domain)
+- ✅ Entwurfs-Hub ist LIVE zur Kundenabstimmung — WhatsApp-Link: https://andreasgrundke-ops.github.io/woidfluestern/hub/
 - Inhalt: Foto Alexandra, Sprachprobe (stimme.mp3), USt-ID, Hausnummer (5 vs 53 prüfen), Hoster im Datenschutz
 - Inhaltliche Freigabe durch Kundin (sensibles Thema); Coaching vs. Trauerbegleitung mit ihr klären
 - Self-Service-Update (Preise/Texte) Konzept später (CMS Decap/Tina)
